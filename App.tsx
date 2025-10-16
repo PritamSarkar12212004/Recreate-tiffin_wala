@@ -1,12 +1,19 @@
 import "./global.css"
-import { View, Text } from 'react-native'
 import React from 'react'
+import { ContextProvider } from "./src/utils/provider/ContextProvider"
+import HelperRoute from "./src/routes/helper/HelperRoute"
+import HandlerRoute from "./src/routes/handler/HandlerRoute"
+import { NavigationContainer } from '@react-navigation/native';
 
 const App = () => {
   return (
-    <View>
-      <Text>App</Text>
-    </View>
+    <NavigationContainer>
+      <ContextProvider>
+        <HelperRoute>
+          <HandlerRoute />
+        </HelperRoute>
+      </ContextProvider>
+    </NavigationContainer>
   )
 }
 
