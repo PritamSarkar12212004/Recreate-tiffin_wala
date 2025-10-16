@@ -7,5 +7,9 @@ const RoutesConst = {
     AUTH_SCREEN: 'AuthScreen',
     VARIFY_SCREEN: 'VarifyScreen',
   },
+  MAIN_SCREEN: {
+    MAIN: 'MainNavigation',
+    HOME: 'HomeScreen',
+  },
 };
 export default RoutesConst;

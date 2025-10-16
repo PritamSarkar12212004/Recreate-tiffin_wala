@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import { userContext } from '../../utils/provider/ContextProvider'
 import PageAuthFunc from '../../functions/helper/root/PageAuthFunc'
-import { ActivityIndicator, View } from 'react-native'
+import { ActivityIndicator, KeyboardAvoidingView, Platform, View } from 'react-native'
 import ColorConst from '../../constants/color/ColorConst'
 
 const HelperRoute = ({ children }: any) => {
@@ -19,11 +19,16 @@ const HelperRoute = ({ children }: any) => {
         </View>
     } else {
         return (
-            <Fragment>
-                {
-                    children
-                }
-            </Fragment>
+            <KeyboardAvoidingView
+                behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+                className="flex-1"
+            >
+                <Fragment>
+                    {
+                        children
+                    }
+                </Fragment>
+            </KeyboardAvoidingView>
         )
     }
 }

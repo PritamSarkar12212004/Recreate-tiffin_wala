@@ -17,9 +17,4 @@ const RootWraper = ({ children }: any) => {
         </View>
     )
 }
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    }
-});
 export default RootWraper
