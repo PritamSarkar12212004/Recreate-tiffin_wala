@@ -1,11 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
+import MainWraper from '../../layouts/wraper/MainWraper'
 
 const HomeScreen = () => {
     return (
-        <View>
-            <Text>HomeScreen</Text>
-        </View>
+    <MainWraper>
+        
+    </MainWraper>
     )
 }
 

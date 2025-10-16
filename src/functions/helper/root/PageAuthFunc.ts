@@ -16,7 +16,8 @@ const PageAuthFunc = async ({
     setData(RoutesConst.SPLASH_ROUTE.FIRST_SCREEN);
   } else if (splash) {
     auth
-      ? null
+      ? (setInitialRoute(RoutesConst.MAIN_SCREEN.MAIN),
+        setData(RoutesConst.MAIN_SCREEN.MAIN))
       : (setInitialRoute(RoutesConst.AUTH_ROUTE.MAIN),
         setData(RoutesConst.AUTH_ROUTE.MAIN));
   }

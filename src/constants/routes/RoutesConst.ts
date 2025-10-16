@@ -10,6 +10,9 @@ const RoutesConst = {
   MAIN_SCREEN: {
     MAIN: 'MainNavigation',
     HOME: 'HomeScreen',
+    NOTIFICATION: 'NotificationScreen',
+    Analize: 'AnalizeScreen',
+    PROFILE: 'ProfileScreen',
   },
 };
 export default RoutesConst;
