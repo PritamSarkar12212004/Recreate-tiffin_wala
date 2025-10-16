@@ -1,13 +1,31 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
+import { userContext } from '../../utils/provider/ContextProvider'
+import PageAuthFunc from '../../functions/helper/root/PageAuthFunc'
+import { ActivityIndicator, View } from 'react-native'
+import ColorConst from '../../constants/color/ColorConst'
 
 const HelperRoute = ({ children }: any) => {
-    return (
-        <Fragment>
-            {
-                children
-            }
-        </Fragment>
-    )
+
+    const { reloader, setInitialRoute } = userContext()
+    const [data, setData] = useState<any>(null)
+    useEffect(() => {
+        PageAuthFunc({ setData, setInitialRoute })
+    }, [reloader.fullPageReloader])
+    if (!data) {
+        <View className='flex-1 items-center justify-center ' style={{
+            backgroundColor: ColorConst.ROOT_COLOR
+        }}>
+            <ActivityIndicator color={"white"} size={50} />
+        </View>
+    } else {
+        return (
+            <Fragment>
+                {
+                    children
+                }
+            </Fragment>
+        )
+    }
 }
 
 export default HelperRoute

@@ -8,11 +8,15 @@ interface ContextinterFace {
         splasPageReloader: boolean,
         authPageReloader: boolean
     }
-    setReloader: any
+    setReloader: any,
+    initialRoute: string | null | any,
+    setInitialRoute: any
 }
 
 const Context = createContext<ContextinterFace | undefined>(undefined);
+
 export const ContextProvider = ({ children }: { children: React.ReactNode }) => {
+    // root hooks
     const [reloader, setReloader] = useState({
         fullPageReloader: false,
         mainPageReloader: false,
@@ -20,12 +24,16 @@ export const ContextProvider = ({ children }: { children: React.ReactNode }) => 
         splasPageReloader: false,
         authPageReloader: false
     })
+    const [initialRoute, setInitialRoute] = useState<string | null>(null)
+
 
     return (
         <Context.Provider
             value={{
                 reloader,
-                setReloader
+                setReloader,
+                initialRoute,
+                setInitialRoute
             }}
         >
             {children}
