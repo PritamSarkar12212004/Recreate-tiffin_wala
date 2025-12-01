@@ -4,7 +4,7 @@ import Icon from '../../global/icon/Icon'
 
 const MainHeader = () => {
     return (
-        <View className='w-full  flex flex-row items-center justify-between'>
+        <View className='w-full  flex flex-row items-center justify-between pb-1'>
             <TouchableOpacity activeOpacity={0.8} className='flex flex-row items-center gap-3'>
                 <View className='relative'>
                     <View className='h-14 w-14 rounded-full p-0.5'>

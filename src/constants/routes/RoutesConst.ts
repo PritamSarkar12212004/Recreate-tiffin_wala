@@ -14,5 +14,9 @@ const RoutesConst = {
     Analize: 'AnalizeScreen',
     PROFILE: 'ProfileScreen',
   },
+  STACK_SCREEN: {
+    MAIN: 'StackNavigation',
+    DAILYMENU: 'DailyMenu',
+  },
 };
 export default RoutesConst;
