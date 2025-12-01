@@ -1,5 +1,5 @@
 const ColorConst = {
-  ROOT_COLOR: '#171717',
+  ROOT_COLOR: '#161616',
 };
 
 export default ColorConst;
