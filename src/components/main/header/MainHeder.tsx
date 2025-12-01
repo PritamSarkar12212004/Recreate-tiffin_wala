@@ -1,10 +1,20 @@
 import { View, Text, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 import Icon from '../../global/icon/Icon'
+import StorageToken from '../../../constants/token/StorageToken'
+import readStorage from '../../../functions/helper/storage/readStorage'
 
-const MainHeader = () => {
+const MainHeader = ({ sheetRef }: {
+    sheetRef: any
+}) => {
+    const checkerAuth = async () => {
+        const check = await readStorage({ key: StorageToken.AUTH_TOKEN.DATA });
+        if (check !== true) {
+            sheetRef.current?.open()
+        }
+    }
     return (
-        <View className='w-full  flex flex-row items-center justify-between pb-1'>
+        <View className='w-full  flex flex-row items-center justify-between'>
             <TouchableOpacity activeOpacity={0.8} className='flex flex-row items-center gap-3'>
                 <View className='relative'>
                     <View className='h-14 w-14 rounded-full p-0.5'>
@@ -27,6 +37,7 @@ const MainHeader = () => {
 
             <View className='flex flex-row gap-4 items-center'>
                 <TouchableOpacity
+                    onPress={() => checkerAuth()}
                     activeOpacity={0.7}
                     className='relative px-4 py-2 bg-blue-700 rounded-2xl flex flex-row items-center justify-center gap-2 shadow-lg shadow-blue-900/30'
                 >

@@ -16,20 +16,17 @@ const HomeScreen = () => {
     const navigation = useNavigation<any>()
     return (
         <MainWraper>
-            <MainHeder />
+            <MainHeder sheetRef={sheetRef} />
             <ScrollView className='flex-1' showsVerticalScrollIndicator={false}>
                 <MasterContent data={MasterContentData} />
                 <MainPoster />
-                <MainContentListLayout title={"Daily Menu"} func={() => navigation.navigate(RoutesConst.STACK_SCREEN.MAIN, {
+                <MainContentListLayout title={"Weekly Menu"} func={() => navigation.navigate(RoutesConst.STACK_SCREEN.MAIN, {
                     screen: RoutesConst.STACK_SCREEN.MAIN
                 })} >
                     <DailyMenu />
                 </MainContentListLayout>
             </ScrollView>
             <CustomBottomSheet ref={sheetRef}>
-                <Text style={styles.heading}>🎉 Advanced Bottom Sheet</Text>
-                <Text style={styles.text}>You can put any custom UI here.</Text>
-
                 <TouchableOpacity onPress={() => sheetRef.current?.close()} />
             </CustomBottomSheet>
         </MainWraper>
@@ -37,20 +34,3 @@ const HomeScreen = () => {
 }
 
 export default HomeScreen
-const styles = StyleSheet.create({
-    container: { flex: 1 },
-    inner: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    heading: {
-        fontSize: 22,
-        fontWeight: '600',
-        marginBottom: 10,
-    },
-    text: {
-        fontSize: 16,
-        marginBottom: 20,
-    },
-});

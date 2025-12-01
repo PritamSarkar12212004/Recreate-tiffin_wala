@@ -4,7 +4,6 @@ import BottomSheet, {
     BottomSheetBackdrop,
     BottomSheetView,
 } from '@gorhom/bottom-sheet';
-
 export type BottomSheetRef = {
     open: () => void;
     close: () => void;
@@ -13,10 +12,7 @@ export type BottomSheetRef = {
 const CustomBottomSheet = forwardRef<BottomSheetRef>((props, ref) => {
     const bottomSheetRef = useRef<BottomSheet>(null);
 
-    // Snap Points
     const snapPoints = useMemo(() => ['25%', '50%', '90%'], []);
-
-    // Expose Functions (open/close)
     useImperativeHandle(ref, () => ({
         open: () => bottomSheetRef.current?.expand(),
         close: () => bottomSheetRef.current?.close(),
@@ -26,6 +22,7 @@ const CustomBottomSheet = forwardRef<BottomSheetRef>((props, ref) => {
         <BottomSheet
             ref={bottomSheetRef}
             snapPoints={snapPoints}
+            index={-1}
             enablePanDownToClose={true}
             backdropComponent={(sheetProps) => (
                 <BottomSheetBackdrop
