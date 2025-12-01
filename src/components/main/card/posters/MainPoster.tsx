@@ -1,10 +1,20 @@
 import { View, Text, Image, TouchableOpacity, Dimensions } from 'react-native'
 import React from 'react'
 import { LinearGradient } from 'react-native-linear-gradient'
+import readStorage from '../../../../functions/helper/storage/readStorage'
+import StorageToken from '../../../../constants/token/StorageToken'
 
 const { width } = Dimensions.get('window')
 
-const MainPoster = () => {
+const MainPoster = ({ sheetRef }: {
+    sheetRef: any
+}) => {
+    const LoginChecker = async() => {
+        const check = await readStorage({ key: StorageToken.AUTH_TOKEN.DATA });
+        if (check !== true) {
+            sheetRef.current?.open()
+        }
+    }
     return (
         <View className='w-full mt-5'>
             <LinearGradient
@@ -34,6 +44,8 @@ const MainPoster = () => {
                             </View>
 
                             <TouchableOpacity
+                                activeOpacity={0.9}
+                                onPress={() => LoginChecker()}
                                 className='bg-white px-4 py-3 rounded-xl mt-3 self-start'
                                 style={{ elevation: 5, shadowColor: '#000' }}
                             >

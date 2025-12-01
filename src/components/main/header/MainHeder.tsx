@@ -44,12 +44,6 @@ const MainHeader = ({ sheetRef }: {
                     <Icon name='hand' color='white' size={12} />
                     <Text className='text-white font-semibold text-sm'>28</Text>
                 </TouchableOpacity>
-                <TouchableOpacity
-                    activeOpacity={0.7}
-                    className='relative h-11 w-11 rounded-full bg-gray-800 flex items-center justify-center border border-gray-700 shadow-lg'
-                >
-                    <Icon name='calendar' color='white' size={18} />
-                </TouchableOpacity>
             </View>
         </View>
     )

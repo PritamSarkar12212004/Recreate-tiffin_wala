@@ -4,6 +4,7 @@ import BottomSheet, {
     BottomSheetBackdrop,
     BottomSheetView,
 } from '@gorhom/bottom-sheet';
+import ColorConst from '../../../constants/color/ColorConst';
 export type BottomSheetRef = {
     open: () => void;
     close: () => void;
@@ -22,10 +23,13 @@ const CustomBottomSheet = forwardRef<BottomSheetRef>((props, ref) => {
         <BottomSheet
             ref={bottomSheetRef}
             snapPoints={snapPoints}
+            backgroundStyle={{ backgroundColor: ColorConst.ROOT_COLOR }}
+            handleIndicatorStyle={{ backgroundColor: '#ffffff' }}
             index={-1}
             enablePanDownToClose={true}
             backdropComponent={(sheetProps) => (
                 <BottomSheetBackdrop
+
                     disappearsOnIndex={-1}
                     appearsOnIndex={0}
                     {...sheetProps}
@@ -43,7 +47,7 @@ const styles = StyleSheet.create({
     content: {
         flex: 1,
         padding: 20,
-        backgroundColor: 'white',
+        backgroundColor: ColorConst.ROOT_COLOR,
     },
 });
 
