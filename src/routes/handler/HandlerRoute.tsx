@@ -11,7 +11,7 @@ const HandlerRoute = () => {
   return (
     <Stack.Navigator screenOptions={{
       headerShown: false
-    }} initialRouteName={initialRoute}>
+    }} initialRouteName={"MainNavigation"}>
       <Stack.Screen name="SplashNavigation" component={SplashScreen} />
       <Stack.Screen name="AuthNavigation" component={AuthNavigation} />
       <Stack.Screen name="MainNavigation" component={MainNavigation} />
