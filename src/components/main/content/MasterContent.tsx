@@ -37,7 +37,7 @@ const MasterContent = ({ data }: {
                     className='w-full h-full'
                     resizeMode='cover'
                     style={{
-                        aspectRatio: 0.85
+                        height: 450
                     }}
                 />
                 <LinearGradient
@@ -78,7 +78,7 @@ const MasterContent = ({ data }: {
                 <View className='absolute bottom-0 left-0 right-0 p-5'>
                     <View className='flex-row justify-end items-center'>
 
-                        <TouchableOpacity className='bg-white/20 p-2 rounded-full'>
+                        <TouchableOpacity activeOpacity={0.9} className='bg-white/20 p-2 rounded-full'>
                             <Icon name='heart' size={18} color='white' />
                         </TouchableOpacity>
                     </View>
@@ -94,7 +94,7 @@ const MasterContent = ({ data }: {
     }
 
     return (
-        <View className='w-full mt-3'>
+        <View className='w-full mt-3 '>
             <View>
                 <FlatList
                     ref={flatListRef}
@@ -117,6 +117,7 @@ const MasterContent = ({ data }: {
             <View className='flex-row justify-center items-center mt-1'>
                 {data.map((_, index) => (
                     <TouchableOpacity
+                        activeOpacity={0.9}
                         key={index}
                         className='mx-1'
                     >

@@ -30,8 +30,8 @@ const MainHeader = () => {
                     activeOpacity={0.7}
                     className='relative px-4 py-2 bg-blue-700 rounded-2xl flex flex-row items-center justify-center gap-2 shadow-lg shadow-blue-900/30'
                 >
-                    <Icon name='hand' color='white' size={14} />
-                    <Text className='text-white font-bold text-base'>28</Text>
+                    <Icon name='hand' color='white' size={12} />
+                    <Text className='text-white font-semibold text-sm'>28</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     activeOpacity={0.7}
